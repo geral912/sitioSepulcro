@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Merch</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background-image: url("./xcovermerch.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      color: red;
+      padding: 28px;
+    }
+    .container{max-width:1100px;margin:0 auto}
+    h1{font-size:1.4rem;margin-bottom:18px}
+
+    /* Estilos para la caja de pago profesional */
+    .payment-box {
+      background: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente para que resalte sobre el fondo */
+      border: 1px solid rgba(255, 0, 0, 0.4); /* Borde sutil rojo */
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    }
+
+    .payment-info h3 {
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .payment-info p {
+      color: #ffcccc;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .payment-info strong, .payment-info span {
+      color: #fff;
+    }
+
+    /* Botón de copiar alias */
+    .copy-btn {
+      background-color: #ff2222;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      background-color: #cc0000;
+    }
+
+    /* Aviso de la seña */
+    .notice {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: #ff9999;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 10px;
+    }
+
+    /* Grid de imágenes */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    @media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:600px){.gallery{grid-template-columns:1fr}}
+
+    .photo{background:white;border-radius:10px;overflow:hidden;box-shadow:0 6px 18px rgba(2,6,23,0.06);display:block}
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+    .caption{padding:10px 12px;font-size:.95rem;color:red}
+    .caption small{display:block;color:red;margin-top:6px}
+
+    /* Opcional: efectos ligeros */
+    .photo:hover img{transform:scale(1.03);transition:transform .4s ease}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Merch</h1>
+
+    <!-- Caja de pago profesional -->
+    <div class="payment-box">
+      <div class="payment-info">
+        <h3>💳 Datos para el pago (Mercado Pago)</h3>
+        <p class="alias-text">Alias: <strong id="aliasText"> sepulcro.dni</strong></p>
+        <p class="holder-text">Titular: <span>Leandro Omar Ciardullo</span></p>
+        <button class="copy-btn" onclick="copyAlias()">Copiar Alias</button>
+      </div>
+      <p class="notice">⚠️ Al momento de la reserva, se solicita una seña del 50% del total.</p>
+    </div>
+
+    <section class="gallery">
+      <figure class="photo">
+        <img src="xreme.jpg" alt="Remera con logo frontal" loading="lazy">
+      </figure>
+       
+      <figure class="photo">
+        <img src="modelo2.jpg" alt="modelo1" loading="lazy">
+      </figure>
+
+      <figure class="photo">
+        <img src="modelo22.jpg" alt="modelo2" loading="lazy">
+      </figure>
+
+      <figure class="photo">
+        <img src="xgorra.jpg" alt="Gorra" loading="lazy">
+      </figure>
+
+      <figure class="photo">
+        <img src="talle.jpg" alt="Talles" loading="lazy">
+      </figure>
+    </section>
+  </div>
+
+  <script>
+    function copyAlias() {
+      const aliasText = document.getElementById("aliasText").innerText;
+      navigator.clipboard.writeText(aliasText).then(() => {
+        const btn = document.querySelector(".copy-btn");
+        btn.innerText = "¡Copiado!";
+        setTimeout(() => {
+          btn.innerText = "Copiar Alias";
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

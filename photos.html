@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Pirata+One&display=swap" rel="stylesheet">
+  <title>Fotos</title>
+  <style>
+    body {
+  background-image: url("./xcover2.jpg");
+  background-repeat: no-repeat;   /* que no se repita */
+  background-size: cover;        /* que cubra toda la pantalla */
+  background-position: center;   /* centrado */
+  font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    
+    }
+
+    h2 {
+      text-align: center;
+      padding: 20px;
+      color: red;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .galeria img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h2>Fotos</h2>
+
+  <div class="galeria">
+    <img src="./xgr.jpg" alt="Foto 0">
+    <img src="./xb.jpg" alt="Foto 1">
+    <img src="./xus.jpg" alt="Foto 2">
+    <img src="./mm.jpg" alt="Foto 3">
+    <img src="./jj.jpg" alt="Foto 4">
+    <img src="./t.jpg" alt="Foto 5">
+    <img src="./xa.jpg" alt="Foto 6">
+    <img src="./padre.png" alt="Foto 7">
+    <img src="./n.jpg" alt="Foto 8">
+    <img src="./pa.jpg" alt="Foto 9">
+    <img src="./pp.jpg" alt="Foto 10">
+    <img src="./ju.jpg" alt="Foto 11">
+    <img src="./l.jpg" alt="Foto 12">
+    <img src="./xbata.jpg" alt="Foto 13">
+    <img src="./tio.png" alt="Foto 14">
+
+  </div>
+</body>
+</html>
